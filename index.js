@@ -37,6 +37,16 @@ app.get('/Heng', (req, res) => {
     )
 })
 
+app.get('/Heng', (req, res) => {
+    connection.query(
+        'SELECT * FROM Heng',
+        function(err, results,fields) {
+            console.log(results)
+            res.send(results)
+        }
+    )
+})
+
 
 
 app.listen(process.env.PORT || 3000)
