@@ -37,20 +37,7 @@ app.get('/Heng', (req, res) => {
     )
 })
 
-app.post('/register',(req,res) => {
-    const sql = "INSERT INTO Register ('name','email','password') VALUES (?)";
-    const values = [
-        req.body.name,
-        req.body.email,
-        req.body.password
-    ]
-    connection.query(sql,[values],(err,data) => {
-        if(er){
-            return res.json("Error");
-        }
-        return res.json(data)
-    })
-})
+
 
 
 app.get('/Heng', (req, res) => {
@@ -62,7 +49,6 @@ app.get('/Heng', (req, res) => {
         }
     )
 })
-
 
 
 app.listen(process.env.PORT || 3000)
